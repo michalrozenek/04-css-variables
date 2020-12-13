@@ -1,0 +1,39 @@
+/* Media queries variable overriding */
+:root {
+  --gap: 10px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gap: 30px;
+  }
+}
+
+/* Theme usage example */
+.theme-wrapper {
+  --theme-primary: orange;
+  --theme-text: black;
+  --theme-bg: lightgrey;
+}
+
+.theme-wrapper--dark {
+  --theme-primary: rgb(255, 0, 119);
+  --theme-text: white;
+  --theme-bg: black;
+}
+
+.theme-wrapper {
+  padding: var(--gap);
+  color: var(--theme-text);
+  background: var(--theme-bg);
+  border-top: 3px solid var(--theme-primary);
+}
+
+/* Variables overriding */
+.content--success {
+  --theme-primary: green;
+}
+
+.content p {
+  color: var(--theme-primary);
+}
